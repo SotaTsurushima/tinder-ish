@@ -9,6 +9,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
+use Illuminate\Auth\Events\Registered;
 
 class RegisterController extends Controller
 {
@@ -32,10 +33,9 @@ class RegisterController extends Controller
 
     public function register(Request $request)
     {
-        dd(1111);
         $this->validator($request->all())->validate();
-
-        event(new Registered($user = $this->create($request->all())));
+        
+        event(new Registered($user = $this->create($request)));
 
         $this->guard()->login($user);
 
@@ -50,8 +50,9 @@ class RegisterController extends Controller
 
     protected function create(Request $request)
     {
-        $data = $request->all();
-        dd($data);
+        // upload image
+        $fileName = $request->file("image")->getClientOriginalName();
+        // dd(gettype ($request->image));
         
 
         // return User::create([
