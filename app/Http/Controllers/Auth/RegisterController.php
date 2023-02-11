@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use Illuminate\Auth\Events\Registered;
+use Illuminate\Support\Facades\Storage;
 
 class RegisterController extends Controller
 {
@@ -52,13 +53,14 @@ class RegisterController extends Controller
     {
         // upload image
         $fileName = $request->file("image")->getClientOriginalName();
-        // dd(gettype ($request->image));
-        
+        Storage::putFileAs("public/images", $request->file("image"), $fileName);
+        $fullFilePath = "storage/images/" . $fileName;
 
-        // return User::create([
-        //     'name' => $data['name'],
-        //     'email' => $data['email'],
-        //     'password' => Hash::make($data['password']),
-        // ]);
+        return User::create([
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+            'password' => Hash::make($request->input('password')),
+            'img_url' => $fullFilePath,
+        ]);
     }
 }
