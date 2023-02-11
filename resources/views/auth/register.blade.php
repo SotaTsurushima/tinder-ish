@@ -12,6 +12,16 @@
                         @csrf
 
                         <div class="row mb-3">
+                            <input 
+                                type="file" 
+                                name="image" 
+                                accept="image/jpeg,image.jpg"
+                                required
+                                class="col-md-4 col-form-label text-md-right mx-auto"
+                            >
+                        </div>
+                            
+                        <div class="row mb-3">
                             <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
 
                             <div class="col-md-6">
