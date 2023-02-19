@@ -69,6 +69,11 @@
                                     </li>
                                 @endif
                             @else
+                                <li class="nav-item">
+                                    <a class="nav-link" href="">
+                                        <i class="fa fa-comments" aria-hidden="true"></i>
+                                    </a>
+                                </li>
                             @endguest
                         </ul>
                     </div>
