@@ -55,6 +55,33 @@ Thank you for considering contributing to the Laravel framework! The contributio
 
 In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
+
+
+## エンドポイント
+
+| 環境 | エンドポイント |
+| - | - |
+| 本番環境 ||
+| ステージング環境 ||
+| 開発環境1 | https://pickles-dev1.aimfactory-system.jp/v1 |
+
+| ロール | 概要 | アクセストークンの入手 |
+| - | - | -|
+| MEMBER | 会員向けサイトの会員 | フロントエンドアプリケーションでのログイン認証時 |
+| STAFF | 管理系アプリケーションのオペレータ | フロントエンドアプリケーションでのログイン認証時 |
+
+```
+Authorization: Bearer {アクセストークン}
+```
+
+## リソース
+
+  + [契約日割計算情報](./pages/outsourcing_contract_daily_rates.md)
+  
+  
+
+
+
 ## Security Vulnerabilities
 
 If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
