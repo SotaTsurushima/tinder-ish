@@ -57,14 +57,6 @@ In order to ensure that the Laravel community is welcoming to all, please review
 
 
 
-## エンドポイント
-
-| 環境 | エンドポイント |
-| - | - |
-| 本番環境 ||
-| ステージング環境 ||
-| 開発環境1 | https://pickles-dev1.aimfactory-system.jp/v1 |
-
 | ロール | 概要 | アクセストークンの入手 |
 | - | - | -|
 | MEMBER | 会員向けサイトの会員 | フロントエンドアプリケーションでのログイン認証時 |
@@ -76,11 +68,8 @@ Authorization: Bearer {アクセストークン}
 
 ## リソース
 
-  + [契約日割計算情報](./pages/outsourcing_contract_daily_rates.md)
+  + [契約日割計算情報]()
   
-  
-
-
 
 ## Security Vulnerabilities
 
